@@ -5,8 +5,10 @@ import {Container} from 'react-bootstrap';
 
 function App() {
   // Search and movie ID held in state in main APP for use in other components
-  const [search, setSearch] = useState('batman'); // <-- initial search when loaded
-  const [movieId, setMovieId] = useState([]) 
+  const [search, setSearch] = useState(''); // <-- initial search when loaded
+  const [movieId, setMovieId] = useState([]);
+  const [allMovies, setAllMovies] = useState([]);
+  const [filtered, setFiltered] = useState([]);
   
   
   
@@ -18,6 +20,10 @@ function App() {
       setSearch={setSearch}
       movieId={movieId}
       setMovieId={setMovieId}
+      allMovies={allMovies}
+      setAllMovies={setAllMovies}
+      filtered={filtered}
+      setFiltered={setFiltered}
       />
     </Container>
   );
