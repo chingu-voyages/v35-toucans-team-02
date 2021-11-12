@@ -19,9 +19,10 @@ export default function Results({allMovies, setAllMovies, filtered, setFiltered,
    }, [])
 
    const movieFilter = () => {
-        if(search === "") return setFiltered(movieList);
+       let searchString = search.toLowerCase();
+        if(searchString === "") return setFiltered(movieList);
         let results = movieList.filter((movie, i) => {
-            return movie.Title.includes(search) 
+            return movie.Title.toLowerCase().match(searchString)
         })
         console.log(results)
         setFiltered(results)
