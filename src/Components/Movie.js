@@ -1,10 +1,6 @@
 import react from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
-
-
 // this is the component for every individual movie result card
 export default function Movie({movie, movieId}) {
     

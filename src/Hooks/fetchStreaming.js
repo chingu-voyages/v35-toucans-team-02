@@ -1,3 +1,6 @@
+/*
+-----DO NOT USE----- (only to be incorporated if we add API calls)
+
 import {useReducer, useEffect} from 'react';
 import axios from 'axios';
 
@@ -56,3 +59,6 @@ export default function FetchStreaming(key) {
 
     return state
 }
+
+
+*/

@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import Search from './Components/Search';
+import Landing from './Components/Landing';
 import {Container} from 'react-bootstrap';
 
 
@@ -9,13 +10,19 @@ function App() {
   const [movieId, setMovieId] = useState([]);
   const [allMovies, setAllMovies] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  
+  const [home, setHome] = useState(1);
   
   
   
 
   return (
     <Container>
+      {home === 1 ? 
+      
+      <Landing home={home}
+      setHome={setHome}
+      /> :
+
       <Search search={search}
       setSearch={setSearch}
       movieId={movieId}
@@ -24,7 +31,10 @@ function App() {
       setAllMovies={setAllMovies}
       filtered={filtered}
       setFiltered={setFiltered}
+      home={home}
+      setHome={setHome}
       />
+      }
     </Container>
   );
 }

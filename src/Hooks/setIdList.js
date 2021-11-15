@@ -1,3 +1,7 @@
+/*
+-----DO NOT USE----- (only to be incorporated if we add API calls)
+
+
 import {useState, useEffect} from 'react';
 import FetchMovieId from './fetchMovieId';
 
@@ -22,3 +26,7 @@ export default function SetIdList() {
 
     return movieId
 }
+
+
+
+*/

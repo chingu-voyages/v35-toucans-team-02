@@ -1,3 +1,6 @@
+/*
+-----DO NOT USE----- (only to be incorporated if we add API calls)
+
 import {useReducer, useEffect} from 'react';
 import axios from 'axios';
 
@@ -53,3 +56,6 @@ const OMDB_SECOND_URL = `https://www.omdbapi.com/?i=${movieId}&apikey=${process.
 
     return state // state is 'movies'
 }
+
+
+*/

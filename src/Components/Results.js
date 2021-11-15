@@ -1,18 +1,18 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import '../index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import fetchMovies from '../Hooks/fetchMovies';
-import {MOVIES} from '../movies.js'
+import { MOVIES } from '../movies.js'
 import Movie from './Movie';
 
 
-//this component houses all of the movie responses from the search
+//this component houses all of the movie responses from the search and how they are displayed.
+
 export default function Results({allMovies, setAllMovies, filtered, setFiltered, search}) {
     
    const movieList = MOVIES.sort((a, b) => (a.Title.toLowerCase() > b.Title.toLowerCase()) ? 1 : -1);
 
     
-
+    // -> initial load
    useEffect(() => {
        setAllMovies(movieList);
        setFiltered(movieList);
@@ -29,7 +29,8 @@ export default function Results({allMovies, setAllMovies, filtered, setFiltered,
         
     console.log(filtered)
 }
-   
+  
+//-- Re-renders as user types in search
 useEffect(() => {
   console.log(search)
   movieFilter()
