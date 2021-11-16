@@ -8,11 +8,12 @@ function App() {
   // Search and movie ID held in state in main APP for use in other components
   const [search, setSearch] = useState(''); // <-- initial search when loaded
   const [movieId, setMovieId] = useState([]);
-  const [allMovies, setAllMovies] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const [home, setHome] = useState(1);
-  
-  
+  const [home, setHome] = useState(1); //<-- toggle between landing page and search page for now
+  const [minDuration, setMinDuration] = useState(0); //default min duration
+  const [maxDuration, setMaxDuration] = useState(400); //default max duration
+
+ 
   
 
   return (
@@ -27,12 +28,14 @@ function App() {
       setSearch={setSearch}
       movieId={movieId}
       setMovieId={setMovieId}
-      allMovies={allMovies}
-      setAllMovies={setAllMovies}
       filtered={filtered}
       setFiltered={setFiltered}
       home={home}
       setHome={setHome}
+      minDuration={minDuration}
+      setMinDuration={setMinDuration}
+      maxDuration={maxDuration}
+      setMaxDuration={setMaxDuration}
       />
       }
     </Container>
