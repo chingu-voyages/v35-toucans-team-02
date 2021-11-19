@@ -7,7 +7,7 @@ import runtimeToNumber from '../Hooks/filterDuration';
 
 /*this component houses all of the movie responses from the search and how they are filtered and displayed. If I had more time I would have cleaned this up better and made separate files for the different hooks :(
 */
-export default function Results({filtered, setFiltered, search, minDuration, setMinDuration, maxDuration, setMaxDuration, titleFilter, setTitleFilter, durationFilter, setDurationFilter, genres, genreFilter, setGenreFilter}) {
+export default function Results({filtered, setFiltered, search, minDuration, setMinDuration, maxDuration, setMaxDuration, searchFilter, setSearchFilter, durationFilter, setDurationFilter, genres, genreFilter, setGenreFilter}) {
    
     //All movies sorted alphabetically:
    const movieList = MOVIES.sort((a, b) => (a.Title.toLowerCase() > b.Title.toLowerCase()) ? 1 : -1);
@@ -36,24 +36,22 @@ export default function Results({filtered, setFiltered, search, minDuration, set
     let results = movieList.filter((movie, i) => {
         let runTime = runtimeToNumber(movie.Runtime); //uses imported hook to convert string to number
      
-        return movie.Title.toLowerCase().match(searchString) && runTime >= minDuration && runTime <= maxDuration
+        return movie.Director.toLowerCase().match(searchString) && runTime >= minDuration && runTime <= maxDuration || movie.Actors.toLowerCase().match(searchString) && runTime >= minDuration && runTime <= maxDuration || movie.Title.toLowerCase().match(searchString) && runTime >= minDuration && runTime <= maxDuration
     })
-    console.log(results);
-    
+
     setFiltered(results);
    }
 
-   // For title filter only
+   // For input search filter only
    const filterTitle = () => {
        let searchString = search.toLowerCase();
         if(searchString === "") return setFiltered(movieList);
         
         let results = movieList.filter((movie, i) => {
-          let categories = movie.Title.toLowerCase() || movie.Actors.toLowerCase() || movie.Director.toLowerCase();
           
             return movie.Director.toLowerCase().match(searchString) || movie.Actors.toLowerCase().match(searchString) || movie.Title.toLowerCase().match(searchString);
         })
-        console.log(results)
+        
         setFiltered(results)
         
     console.log(filtered)
@@ -89,7 +87,7 @@ const filterGenres = () => {
   
 //-- Re-renders as user types in search
 useEffect(() => {
-  search !== "" ? setTitleFilter(true) : setTitleFilter(false);
+  search !== "" ? setSearchFilter(true) : setSearchFilter(false);
   console.log(search)
   applyFilters()
   
@@ -130,9 +128,9 @@ const filterDuration = () => {
 
     //Combines multiple filters if necessary:
  const applyFilters = () => {
-     if(titleFilter && !durationFilter) return filterTitle();
-     if(durationFilter && !titleFilter) return filterDuration();
-     if(titleFilter && durationFilter) return superFilter();
+     if(searchFilter && !durationFilter) return filterTitle();
+     if(durationFilter && !searchFilter) return filterDuration();
+     if(searchFilter && durationFilter) return superFilter();
  }
     // This component is rendered on the Search component for now. Individual Movie Cards are mapped and rendered here:
     return (

@@ -5,7 +5,7 @@ import Results from './Results';
 export default function Search({search, setSearch, filtered, setFiltered, home, setHome, minDuration, setMinDuration, maxDuration, setMaxDuration}) {
  
   //Switches for when filters are applied/removed:
-  const [titleFilter, setTitleFilter] = useState(false); 
+  const [searchFilter, setSearchFilter] = useState(false); 
   const [durationFilter, setDurationFilter] = useState(false);
   const [genreFilter, setGenreFilter] = useState(false);
   // Genres switch to true/false when checkbox clicked:
@@ -47,7 +47,7 @@ export default function Search({search, setSearch, filtered, setFiltered, home, 
     setMinDuration(0);
     setMaxDuration(400);
     setSearch('');
-    setTitleFilter(false);
+    setSearchFilter(false);
     setDurationFilter(false);
     setGenreFilter(false);
     setGenres({
@@ -111,8 +111,8 @@ export default function Search({search, setSearch, filtered, setFiltered, home, 
           setMinDuration={setMinDuration}
           maxDuration={maxDuration}
           setMaxDuration={setMaxDuration}
-          titleFilter={titleFilter}
-          setTitleFilter={setTitleFilter}
+          searchFilter={searchFilter}
+          setSearchFilter={setSearchFilter}
           durationFilter={durationFilter}
           setDurationFilter={setDurationFilter}
           genres={genres}

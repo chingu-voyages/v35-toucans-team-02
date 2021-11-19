@@ -1,3 +1,5 @@
+//Here is the internal data we are accessing. I was planning to remove some of the key/value categories we aren't using to improve performance time. Unfortunately this would have to be done manually. Additionally, if we wanted to add "streaming info" as a category to filter by, that could be done, but would also have to be done manually.
+
 export const MOVIES = [{
     "Title": "Batman Begins",
     "Year": "2005",
