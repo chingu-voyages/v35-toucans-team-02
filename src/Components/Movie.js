@@ -1,12 +1,13 @@
 import react from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// this is the component for every individual movie result card
+// this is the component for every individual movie result card that gets mapped on the Results component:
 export default function Movie({movie, movieId}) {
     
     
 
-        //"Movie Card" structure is rendered here: 
+ /*  "Movie Card" structure is rendered here. Here is where you can style every individual result. "movie.[property]" will display the data property from our internal data bank. Again used bootstrap cards but the style can be modified however you guys decide.
+ */
     return (
         
         <div className="card m-1" style={{width: "20vw", border: "1px solid black"}}>
