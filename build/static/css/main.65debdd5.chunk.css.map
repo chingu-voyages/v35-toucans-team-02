@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,SACE,UAAW,CACX,gBAAiB,CACjB,YAAa,CACb,cACF,CACA,aACE,cAAe,CACf,KAAM,CACN,OACF","file":"main.65debdd5.chunk.css","sourcesContent":["#results {\n  width: 100%;\n  min-height: 100vh;\n  display: flex;\n  flex-wrap: wrap;\n}\n#home-button {\n  position: fixed;\n  top: 0;\n  right: 0;\n}\n"]}

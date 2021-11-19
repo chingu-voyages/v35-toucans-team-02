@@ -8,15 +8,3 @@ export default function runtimeToNumber(string){
     return parseInt(conversion, 10)
 }
 
-//func 1 - setMinDuration; func2 - setMaxDuration
-/*
-export default function filterDuration(results, func, min, max){
-    results.filter(movies => {
-       let duration = runTimeToNumber(movies.RunTime)
-       if(duration >= min && duration <= max){
-
-       }
-    })
-}
-*/
-
