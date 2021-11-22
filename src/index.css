@@ -1,0 +1,11 @@
+#results {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+#home-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
