@@ -5,6 +5,7 @@ import Newspaper from '../assets/Newspaper'
 import Wishlist from '../assets/Wishlist'
 import Streaming from '../assets/Streaming'
 import Logo from '../assets/Logo'
+import { SiInstagram, SiFacebook, SiPinterest } from "react-icons/si";
 
 /*
 Hi Brian, I have this set up now so the landing page will load first. I just made a toggle button for us to use to go back and forth from the landing page to the search page when we are working on the app, you can do whatever you want with it. I have an index.css file but feel free to create your own style file for the landing page if you'd like. Don't hesistate to reach out with any questions, just remember since its React there has to be one div/container in the return that houses all of the other elements (I just made a div and set to 100vh) and that you have to use 'className' instead of 'class'.
@@ -33,7 +34,7 @@ const Nav = ({ setHome }) => (
             <NavItem color="#FFB902">
                 Movie News
             </NavItem>
-            <NavItem>
+            <NavItem color="#6967CE">
                 Login / Register
             </NavItem>
         </ul>
@@ -70,14 +71,39 @@ const Testimonials = () => (
     </div>
 )
 
+const Footer = () => (
+    <div style={{ padding: '4rem', backgroundColor: '#565775', display: 'flex', justifyContent: 'space-between', color: 'white', fill: 'white' }}>
+        <Logo />
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+            <p style={{ fontSize: '1.5rem' }}>Contact Us</p>
+            <SiInstagram  />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+            <p style={{ fontSize: '1.5rem' }}>Terms & Conditions</p>
+            <SiFacebook  />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+            <p style={{ fontSize: '1.5rem' }}>Privacy Policy</p>
+            <SiPinterest  />
+          </div>
+        </div>
+    </div>
+)
+
 
 export default function Landing({home, setHome}) {
     return (
         <div style={{height: "100vh"}}>
          <Nav setHome={setHome} />
          <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem'}}>
+         <div style={{ position: 'relative' }}>
+         <img src="/images/hero-image.jpg" alt="laptop" style={{ objectFit: 'cover', filter: 'saturate(10%)', opacity: '80%', zIndex: -1 }} />
+         <h1 style={{ position: 'absolute', fontSize: '4rem', top: '25%', left: '15%' , textAlign: 'center', padding: '2rem', backgroundColor: 'hsla(0, 0%, 0%, .5)', color: 'white' }}>Are you spending more time <br /> <span style={{ color: '#FC636B', fontWeight: 'bolder' }}>SEARCHING <br /> </span> instead of <br /> <span style={{ color: '#6967CE', fontWeight: 'bolder' }}>WATCHING?</span></h1>
+         </div>
          <Features /> 
          <Testimonials />
+         <Footer />
          </div>
         </div>
     )
